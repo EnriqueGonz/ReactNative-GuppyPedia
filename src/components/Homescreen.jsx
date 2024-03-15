@@ -1,26 +1,13 @@
 import React, { useState } from "react";
 import { Text, View, Button } from "react-native";
-import DrawerNavigation from "./DrawerNavigation";
+import { ButtonTabNavigation } from "./ButtonTabNavigation.jsx";
 
 const Homescreen = () => {
-  const [drawerVisible, setDrawerVisible] = useState(false);
-
-  const toggleDrawer = () => {
-    setDrawerVisible(!drawerVisible);
-  };
 
   return (
-    <View>
-      {drawerVisible && <DrawerNavigation />}
-
-      <View>
-        <Button title="Mostrar drawer" onPress={toggleDrawer} />
-      </View>
-      <View>
-        <Text style={{ color: "red" }}>Hola mundo</Text>
-      </View>
-      <View>
-        <Button title="Press me" />
+    <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <ButtonTabNavigation />
       </View>
     </View>
   );
